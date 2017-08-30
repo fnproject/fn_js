@@ -1,4 +1,4 @@
-# OracleFunctions.AppsWrapper
+# FnJs.AppsWrapper
 
 ## Properties
 Name | Type | Description | Notes

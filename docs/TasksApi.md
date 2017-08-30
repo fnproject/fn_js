@@ -1,4 +1,4 @@
-# OracleFunctions.TasksApi
+# FnJs.TasksApi
 
 All URIs are relative to *https://127.0.0.1:8080/v1*
 
@@ -17,9 +17,9 @@ Gets the next task in the queue, ready for processing. Consumers should start pr
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.TasksApi();
+var apiInstance = new FnJs.TasksApi();
 
 var callback = function(error, data, response) {
   if (error) {

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Version'));
   } else {
     // Browser globals (root is window)
-    if (!root.OracleFunctions) {
-      root.OracleFunctions = {};
+    if (!root.FnJs) {
+      root.FnJs = {};
     }
-    root.OracleFunctions.VersionApi = factory(root.OracleFunctions.ApiClient, root.OracleFunctions.Version);
+    root.FnJs.VersionApi = factory(root.FnJs.ApiClient, root.FnJs.Version);
   }
 }(this, function(ApiClient, Version) {
   'use strict';

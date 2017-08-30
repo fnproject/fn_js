@@ -1,4 +1,4 @@
-# OracleFunctions.App
+# FnJs.App
 
 ## Properties
 Name | Type | Description | Notes

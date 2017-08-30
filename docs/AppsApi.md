@@ -1,4 +1,4 @@
-# OracleFunctions.AppsApi
+# FnJs.AppsApi
 
 All URIs are relative to *https://127.0.0.1:8080/v1*
 
@@ -21,9 +21,9 @@ Delete an app.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.AppsApi();
+var apiInstance = new FnJs.AppsApi();
 
 var app = "app_example"; // String | Name of the app.
 
@@ -67,9 +67,9 @@ This gives more details about a app, such as statistics.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.AppsApi();
+var apiInstance = new FnJs.AppsApi();
 
 var app = "app_example"; // String | name of the app.
 
@@ -113,13 +113,13 @@ You can set app level settings here.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.AppsApi();
+var apiInstance = new FnJs.AppsApi();
 
 var app = "app_example"; // String | name of the app.
 
-var body = new OracleFunctions.AppWrapper(); // AppWrapper | App to post.
+var body = new FnJs.AppWrapper(); // AppWrapper | App to post.
 
 
 var callback = function(error, data, response) {
@@ -162,9 +162,9 @@ Get a list of all the apps in the system.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.AppsApi();
+var apiInstance = new FnJs.AppsApi();
 
 var callback = function(error, data, response) {
   if (error) {
@@ -202,11 +202,11 @@ Insert a new app
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.AppsApi();
+var apiInstance = new FnJs.AppsApi();
 
-var body = new OracleFunctions.AppWrapper(); // AppWrapper | App to post.
+var body = new FnJs.AppWrapper(); // AppWrapper | App to post.
 
 
 var callback = function(error, data, response) {

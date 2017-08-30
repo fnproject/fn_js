@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.Route();
+    instance = new FnJs.Route();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,67 +52,67 @@
   describe('Route', function() {
     it('should create an instance of Route', function() {
       // uncomment below and update the code to test Route
-      //var instane = new OracleFunctions.Route();
-      //expect(instance).to.be.a(OracleFunctions.Route);
+      //var instane = new FnJs.Route();
+      //expect(instance).to.be.a(FnJs.Route);
     });
 
     it('should have the property path (base name: "path")', function() {
       // uncomment below and update the code to test the property path
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property headers (base name: "headers")', function() {
       // uncomment below and update the code to test the property headers
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property memory (base name: "memory")', function() {
       // uncomment below and update the code to test the property memory
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property format (base name: "format")', function() {
       // uncomment below and update the code to test the property format
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property maxConcurrency (base name: "max_concurrency")', function() {
       // uncomment below and update the code to test the property maxConcurrency
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property config (base name: "config")', function() {
       // uncomment below and update the code to test the property config
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property timeout (base name: "timeout")', function() {
       // uncomment below and update the code to test the property timeout
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 
     it('should have the property idleTimeout (base name: "idle_timeout")', function() {
       // uncomment below and update the code to test the property idleTimeout
-      //var instane = new OracleFunctions.Route();
+      //var instane = new FnJs.Route();
       //expect(instance).to.be();
     });
 

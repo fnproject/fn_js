@@ -1,4 +1,4 @@
-# OracleFunctions.RoutesApi
+# FnJs.RoutesApi
 
 All URIs are relative to *https://127.0.0.1:8080/v1*
 
@@ -21,9 +21,9 @@ This will list routes for a particular app.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.RoutesApi();
+var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | Name of app for this set of routes.
 
@@ -67,13 +67,13 @@ Create a new route in an app, if app doesn&#39;t exists, it creates the app
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.RoutesApi();
+var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | name of the app.
 
-var body = new OracleFunctions.RouteWrapper(); // RouteWrapper | One route to post.
+var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
 
 
 var callback = function(error, data, response) {
@@ -116,9 +116,9 @@ Deletes the route.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.RoutesApi();
+var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | Name of app for this set of routes.
 
@@ -165,9 +165,9 @@ Gets a route by name.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.RoutesApi();
+var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | Name of app for this set of routes.
 
@@ -214,15 +214,15 @@ Update a route
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.RoutesApi();
+var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | name of the app.
 
 var route = "route_example"; // String | route path.
 
-var body = new OracleFunctions.RouteWrapper(); // RouteWrapper | One route to post.
+var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
 
 
 var callback = function(error, data, response) {

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ErrorBody'), require('./Route'));
   } else {
     // Browser globals (root is window)
-    if (!root.OracleFunctions) {
-      root.OracleFunctions = {};
+    if (!root.FnJs) {
+      root.FnJs = {};
     }
-    root.OracleFunctions.RouteWrapper = factory(root.OracleFunctions.ApiClient, root.OracleFunctions.ErrorBody, root.OracleFunctions.Route);
+    root.FnJs.RouteWrapper = factory(root.FnJs.ApiClient, root.FnJs.ErrorBody, root.FnJs.Route);
   }
 }(this, function(ApiClient, ErrorBody, Route) {
   'use strict';

@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.Task();
+    instance = new FnJs.Task();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,61 +52,61 @@
   describe('Task', function() {
     it('should create an instance of Task', function() {
       // uncomment below and update the code to test Task
-      //var instane = new OracleFunctions.Task();
-      //expect(instance).to.be.a(OracleFunctions.Task);
+      //var instane = new FnJs.Task();
+      //expect(instance).to.be.a(FnJs.Task);
     });
 
     it('should have the property groupName (base name: "group_name")', function() {
       // uncomment below and update the code to test the property groupName
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property error (base name: "error")', function() {
       // uncomment below and update the code to test the property error
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property reason (base name: "reason")', function() {
       // uncomment below and update the code to test the property reason
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property startedAt (base name: "started_at")', function() {
       // uncomment below and update the code to test the property startedAt
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property completedAt (base name: "completed_at")', function() {
       // uncomment below and update the code to test the property completedAt
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property retryOf (base name: "retry_of")', function() {
       // uncomment below and update the code to test the property retryOf
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property retryAt (base name: "retry_at")', function() {
       // uncomment below and update the code to test the property retryAt
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 
     it('should have the property envVars (base name: "env_vars")', function() {
       // uncomment below and update the code to test the property envVars
-      //var instane = new OracleFunctions.Task();
+      //var instane = new FnJs.Task();
       //expect(instance).to.be();
     });
 

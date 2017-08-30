@@ -1,4 +1,4 @@
-# OracleFunctions.ErrorBody
+# FnJs.ErrorBody
 
 ## Properties
 Name | Type | Description | Notes

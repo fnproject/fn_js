@@ -1,4 +1,4 @@
-# OracleFunctions.VersionApi
+# FnJs.VersionApi
 
 All URIs are relative to *https://127.0.0.1:8080/v1*
 
@@ -15,9 +15,9 @@ Get daemon version.
 
 ### Example
 ```javascript
-var OracleFunctions = require('oracle_functions');
+var FnJs = require('fn_js');
 
-var apiInstance = new OracleFunctions.VersionApi();
+var apiInstance = new FnJs.VersionApi();
 
 var callback = function(error, data, response) {
   if (error) {

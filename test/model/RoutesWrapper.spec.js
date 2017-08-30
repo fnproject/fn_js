@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.RoutesWrapper();
+    instance = new FnJs.RoutesWrapper();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,19 +52,19 @@
   describe('RoutesWrapper', function() {
     it('should create an instance of RoutesWrapper', function() {
       // uncomment below and update the code to test RoutesWrapper
-      //var instane = new OracleFunctions.RoutesWrapper();
-      //expect(instance).to.be.a(OracleFunctions.RoutesWrapper);
+      //var instane = new FnJs.RoutesWrapper();
+      //expect(instance).to.be.a(FnJs.RoutesWrapper);
     });
 
     it('should have the property routes (base name: "routes")', function() {
       // uncomment below and update the code to test the property routes
-      //var instane = new OracleFunctions.RoutesWrapper();
+      //var instane = new FnJs.RoutesWrapper();
       //expect(instance).to.be();
     });
 
     it('should have the property error (base name: "error")', function() {
       // uncomment below and update the code to test the property error
-      //var instane = new OracleFunctions.RoutesWrapper();
+      //var instane = new FnJs.RoutesWrapper();
       //expect(instance).to.be();
     });
 

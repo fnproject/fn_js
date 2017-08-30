@@ -1,4 +1,4 @@
-# OracleFunctions.RoutesWrapper
+# FnJs.RoutesWrapper
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.Version();
+    instance = new FnJs.Version();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,13 +52,13 @@
   describe('Version', function() {
     it('should create an instance of Version', function() {
       // uncomment below and update the code to test Version
-      //var instane = new OracleFunctions.Version();
-      //expect(instance).to.be.a(OracleFunctions.Version);
+      //var instane = new FnJs.Version();
+      //expect(instance).to.be.a(FnJs.Version);
     });
 
     it('should have the property version (base name: "version")', function() {
       // uncomment below and update the code to test the property version
-      //var instane = new OracleFunctions.Version();
+      //var instane = new FnJs.Version();
       //expect(instance).to.be();
     });
 

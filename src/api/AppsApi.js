@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AppWrapper'), require('../model/AppsWrapper'), require('../model/Error'));
   } else {
     // Browser globals (root is window)
-    if (!root.OracleFunctions) {
-      root.OracleFunctions = {};
+    if (!root.FnJs) {
+      root.FnJs = {};
     }
-    root.OracleFunctions.AppsApi = factory(root.OracleFunctions.ApiClient, root.OracleFunctions.AppWrapper, root.OracleFunctions.AppsWrapper, root.OracleFunctions.Error);
+    root.FnJs.AppsApi = factory(root.FnJs.ApiClient, root.FnJs.AppWrapper, root.FnJs.AppsWrapper, root.FnJs.Error);
   }
 }(this, function(ApiClient, AppWrapper, AppsWrapper, Error) {
   'use strict';

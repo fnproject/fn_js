@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.ErrorBody();
+    instance = new FnJs.ErrorBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,19 +52,19 @@
   describe('ErrorBody', function() {
     it('should create an instance of ErrorBody', function() {
       // uncomment below and update the code to test ErrorBody
-      //var instane = new OracleFunctions.ErrorBody();
-      //expect(instance).to.be.a(OracleFunctions.ErrorBody);
+      //var instane = new FnJs.ErrorBody();
+      //expect(instance).to.be.a(FnJs.ErrorBody);
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new OracleFunctions.ErrorBody();
+      //var instane = new FnJs.ErrorBody();
       //expect(instance).to.be();
     });
 
     it('should have the property fields (base name: "fields")', function() {
       // uncomment below and update the code to test the property fields
-      //var instane = new OracleFunctions.ErrorBody();
+      //var instane = new FnJs.ErrorBody();
       //expect(instance).to.be();
     });
 

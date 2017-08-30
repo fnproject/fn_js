@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.OracleFunctions) {
-      root.OracleFunctions = {};
+    if (!root.FnJs) {
+      root.FnJs = {};
     }
-    root.OracleFunctions.App = factory(root.OracleFunctions.ApiClient);
+    root.FnJs.App = factory(root.FnJs.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';

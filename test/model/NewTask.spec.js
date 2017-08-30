@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.NewTask();
+    instance = new FnJs.NewTask();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,19 +52,19 @@
   describe('NewTask', function() {
     it('should create an instance of NewTask', function() {
       // uncomment below and update the code to test NewTask
-      //var instane = new OracleFunctions.NewTask();
-      //expect(instance).to.be.a(OracleFunctions.NewTask);
+      //var instane = new FnJs.NewTask();
+      //expect(instance).to.be.a(FnJs.NewTask);
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new OracleFunctions.NewTask();
+      //var instane = new FnJs.NewTask();
       //expect(instance).to.be();
     });
 
     it('should have the property payload (base name: "payload")', function() {
       // uncomment below and update the code to test the property payload
-      //var instane = new OracleFunctions.NewTask();
+      //var instane = new FnJs.NewTask();
       //expect(instance).to.be();
     });
 

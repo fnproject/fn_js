@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.TaskWrapper();
+    instance = new FnJs.TaskWrapper();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,13 +52,13 @@
   describe('TaskWrapper', function() {
     it('should create an instance of TaskWrapper', function() {
       // uncomment below and update the code to test TaskWrapper
-      //var instane = new OracleFunctions.TaskWrapper();
-      //expect(instance).to.be.a(OracleFunctions.TaskWrapper);
+      //var instane = new FnJs.TaskWrapper();
+      //expect(instance).to.be.a(FnJs.TaskWrapper);
     });
 
     it('should have the property task (base name: "task")', function() {
       // uncomment below and update the code to test the property task
-      //var instane = new OracleFunctions.TaskWrapper();
+      //var instane = new FnJs.TaskWrapper();
       //expect(instance).to.be();
     });
 

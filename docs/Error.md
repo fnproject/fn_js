@@ -1,4 +1,4 @@
-# OracleFunctions.Error
+# FnJs.Error
 
 ## Properties
 Name | Type | Description | Notes

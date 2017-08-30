@@ -1,4 +1,4 @@
-# OracleFunctions.NewTask
+# FnJs.NewTask
 
 ## Properties
 Name | Type | Description | Notes

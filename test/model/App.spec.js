@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.App();
+    instance = new FnJs.App();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,19 +52,19 @@
   describe('App', function() {
     it('should create an instance of App', function() {
       // uncomment below and update the code to test App
-      //var instane = new OracleFunctions.App();
-      //expect(instance).to.be.a(OracleFunctions.App);
+      //var instane = new FnJs.App();
+      //expect(instance).to.be.a(FnJs.App);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new OracleFunctions.App();
+      //var instane = new FnJs.App();
       //expect(instance).to.be();
     });
 
     it('should have the property config (base name: "config")', function() {
       // uncomment below and update the code to test the property config
-      //var instane = new OracleFunctions.App();
+      //var instane = new FnJs.App();
       //expect(instance).to.be();
     });
 

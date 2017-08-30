@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Error'), require('../model/TaskWrapper'));
   } else {
     // Browser globals (root is window)
-    if (!root.OracleFunctions) {
-      root.OracleFunctions = {};
+    if (!root.FnJs) {
+      root.FnJs = {};
     }
-    root.OracleFunctions.TasksApi = factory(root.OracleFunctions.ApiClient, root.OracleFunctions.Error, root.OracleFunctions.TaskWrapper);
+    root.FnJs.TasksApi = factory(root.FnJs.ApiClient, root.FnJs.Error, root.FnJs.TaskWrapper);
   }
 }(this, function(ApiClient, Error, TaskWrapper) {
   'use strict';

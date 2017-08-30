@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.OracleFunctions);
+    factory(root.expect, root.FnJs);
   }
-}(this, function(expect, OracleFunctions) {
+}(this, function(expect, FnJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new OracleFunctions.Error();
+    instance = new FnJs.Error();
   });
 
   var getProperty = function(object, getter, property) {
@@ -52,13 +52,13 @@
   describe('Error', function() {
     it('should create an instance of Error', function() {
       // uncomment below and update the code to test Error
-      //var instane = new OracleFunctions.Error();
-      //expect(instance).to.be.a(OracleFunctions.Error);
+      //var instane = new FnJs.Error();
+      //expect(instance).to.be.a(FnJs.Error);
     });
 
     it('should have the property error (base name: "error")', function() {
       // uncomment below and update the code to test the property error
-      //var instane = new OracleFunctions.Error();
+      //var instane = new FnJs.Error();
       //expect(instance).to.be();
     });
 
