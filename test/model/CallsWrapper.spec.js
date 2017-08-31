@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.RoutesWrapper();
+    instance = new FnJs.CallsWrapper();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('RoutesWrapper', function() {
-    it('should create an instance of RoutesWrapper', function() {
-      // uncomment below and update the code to test RoutesWrapper
-      //var instane = new FnJs.RoutesWrapper();
-      //expect(instance).to.be.a(FnJs.RoutesWrapper);
+  describe('CallsWrapper', function() {
+    it('should create an instance of CallsWrapper', function() {
+      // uncomment below and update the code to test CallsWrapper
+      //var instane = new FnJs.CallsWrapper();
+      //expect(instance).to.be.a(FnJs.CallsWrapper);
     });
 
-    it('should have the property routes (base name: "routes")', function() {
-      // uncomment below and update the code to test the property routes
-      //var instane = new FnJs.RoutesWrapper();
+    it('should have the property calls (base name: "calls")', function() {
+      // uncomment below and update the code to test the property calls
+      //var instane = new FnJs.CallsWrapper();
       //expect(instance).to.be();
     });
 
     it('should have the property error (base name: "error")', function() {
       // uncomment below and update the code to test the property error
-      //var instane = new FnJs.RoutesWrapper();
+      //var instane = new FnJs.CallsWrapper();
       //expect(instance).to.be();
     });
 

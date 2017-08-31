@@ -25,7 +25,7 @@
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.App = factory(root.FnJs.ApiClient);
+    root.FnJs.Log = factory(root.FnJs.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The App model module.
-   * @module model/App
+   * The Log model module.
+   * @module model/Log
    * @version 0.2.0
    */
 
   /**
-   * Constructs a new <code>App</code>.
-   * @alias module:model/App
+   * Constructs a new <code>Log</code>.
+   * @alias module:model/Log
    * @class
    */
   var exports = function() {
@@ -52,36 +52,35 @@
   };
 
   /**
-   * Constructs a <code>App</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Log</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/App} obj Optional instance to populate.
-   * @return {module:model/App} The populated <code>App</code> instance.
+   * @param {module:model/Log} obj Optional instance to populate.
+   * @return {module:model/Log} The populated <code>Log</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('call_id')) {
+        obj['call_id'] = ApiClient.convertToType(data['call_id'], 'String');
       }
-      if (data.hasOwnProperty('config')) {
-        obj['config'] = ApiClient.convertToType(data['config'], {'String': 'String'});
+      if (data.hasOwnProperty('log')) {
+        obj['log'] = ApiClient.convertToType(data['log'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Name of this app. Must be different than the image name. Can ony contain alphanumeric, -, and _.
-   * @member {String} name
+   * Call UUID ID
+   * @member {String} call_id
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['call_id'] = undefined;
   /**
-   * Application configuration
-   * @member {Object.<String, String>} config
+   * @member {String} log
    */
-  exports.prototype['config'] = undefined;
+  exports.prototype['log'] = undefined;
 
 
 

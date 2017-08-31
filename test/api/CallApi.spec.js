@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.AppsApi();
+    instance = new FnJs.CallApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,51 +49,41 @@
       object[property] = value;
   }
 
-  describe('AppsApi', function() {
-    describe('appsAppDelete', function() {
-      it('should call appsAppDelete successfully', function(done) {
-        //uncomment below and update the code to test appsAppDelete
-        //instance.appsAppDelete(function(error) {
+  describe('CallApi', function() {
+    describe('appsAppCallsCallGet', function() {
+      it('should call appsAppCallsCallGet successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsCallGet
+        //instance.appsAppCallsCallGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('appsAppGet', function() {
-      it('should call appsAppGet successfully', function(done) {
-        //uncomment below and update the code to test appsAppGet
-        //instance.appsAppGet(function(error) {
+    describe('appsAppCallsCallLogDelete', function() {
+      it('should call appsAppCallsCallLogDelete successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsCallLogDelete
+        //instance.appsAppCallsCallLogDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('appsAppPatch', function() {
-      it('should call appsAppPatch successfully', function(done) {
-        //uncomment below and update the code to test appsAppPatch
-        //instance.appsAppPatch(function(error) {
+    describe('appsAppCallsCallLogGet', function() {
+      it('should call appsAppCallsCallLogGet successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsCallLogGet
+        //instance.appsAppCallsCallLogGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('appsGet', function() {
-      it('should call appsGet successfully', function(done) {
-        //uncomment below and update the code to test appsGet
-        //instance.appsGet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('appsPost', function() {
-      it('should call appsPost successfully', function(done) {
-        //uncomment below and update the code to test appsPost
-        //instance.appsPost(function(error) {
+    describe('appsAppCallsGet', function() {
+      it('should call appsAppCallsGet successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsGet
+        //instance.appsAppCallsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

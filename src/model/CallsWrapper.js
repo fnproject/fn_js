@@ -16,55 +16,55 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorBody', 'model/Route'], factory);
+    define(['ApiClient', 'model/Call', 'model/ErrorBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorBody'), require('./Route'));
+    module.exports = factory(require('../ApiClient'), require('./Call'), require('./ErrorBody'));
   } else {
     // Browser globals (root is window)
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.RoutesWrapper = factory(root.FnJs.ApiClient, root.FnJs.ErrorBody, root.FnJs.Route);
+    root.FnJs.CallsWrapper = factory(root.FnJs.ApiClient, root.FnJs.Call, root.FnJs.ErrorBody);
   }
-}(this, function(ApiClient, ErrorBody, Route) {
+}(this, function(ApiClient, Call, ErrorBody) {
   'use strict';
 
 
 
 
   /**
-   * The RoutesWrapper model module.
-   * @module model/RoutesWrapper
+   * The CallsWrapper model module.
+   * @module model/CallsWrapper
    * @version 0.2.0
    */
 
   /**
-   * Constructs a new <code>RoutesWrapper</code>.
-   * @alias module:model/RoutesWrapper
+   * Constructs a new <code>CallsWrapper</code>.
+   * @alias module:model/CallsWrapper
    * @class
-   * @param routes {Array.<module:model/Route>} 
+   * @param calls {Array.<module:model/Call>} 
    */
-  var exports = function(routes) {
+  var exports = function(calls) {
     var _this = this;
 
-    _this['routes'] = routes;
+    _this['calls'] = calls;
 
   };
 
   /**
-   * Constructs a <code>RoutesWrapper</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CallsWrapper</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/RoutesWrapper} obj Optional instance to populate.
-   * @return {module:model/RoutesWrapper} The populated <code>RoutesWrapper</code> instance.
+   * @param {module:model/CallsWrapper} obj Optional instance to populate.
+   * @return {module:model/CallsWrapper} The populated <code>CallsWrapper</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('routes')) {
-        obj['routes'] = ApiClient.convertToType(data['routes'], [Route]);
+      if (data.hasOwnProperty('calls')) {
+        obj['calls'] = ApiClient.convertToType(data['calls'], [Call]);
       }
       if (data.hasOwnProperty('error')) {
         obj['error'] = ErrorBody.constructFromObject(data['error']);
@@ -74,9 +74,9 @@
   }
 
   /**
-   * @member {Array.<module:model/Route>} routes
+   * @member {Array.<module:model/Call>} calls
    */
-  exports.prototype['routes'] = undefined;
+  exports.prototype['calls'] = undefined;
   /**
    * @member {module:model/ErrorBody} error
    */

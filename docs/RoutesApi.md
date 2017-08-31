@@ -8,7 +8,8 @@ Method | HTTP request | Description
 [**appsAppRoutesPost**](RoutesApi.md#appsAppRoutesPost) | **POST** /apps/{app}/routes | Create new Route
 [**appsAppRoutesRouteDelete**](RoutesApi.md#appsAppRoutesRouteDelete) | **DELETE** /apps/{app}/routes/{route} | Deletes the route
 [**appsAppRoutesRouteGet**](RoutesApi.md#appsAppRoutesRouteGet) | **GET** /apps/{app}/routes/{route} | Gets route by name
-[**appsAppRoutesRoutePatch**](RoutesApi.md#appsAppRoutesRoutePatch) | **PATCH** /apps/{app}/routes/{route} | Update a Route
+[**appsAppRoutesRoutePatch**](RoutesApi.md#appsAppRoutesRoutePatch) | **PATCH** /apps/{app}/routes/{route} | Update a Route, Fails if the route or app does not exist. Accepts partial updates / skips validation of zero values.
+[**appsAppRoutesRoutePut**](RoutesApi.md#appsAppRoutesRoutePut) | **PUT** /apps/{app}/routes/{route} | Create a Route if it does not exist. Update if it does. Will also create app if it does not exist. Put does not skip validation of zero values
 
 
 <a name="appsAppRoutesGet"></a>
@@ -63,7 +64,7 @@ No authorization required
 
 Create new Route
 
-Create a new route in an app, if app doesn&#39;t exists, it creates the app
+Create a new route in an app, if app doesn&#39;t exists, it creates the app. Post does not skip validation of zero values.
 
 ### Example
 ```javascript
@@ -208,7 +209,7 @@ No authorization required
 # **appsAppRoutesRoutePatch**
 > RouteWrapper appsAppRoutesRoutePatch(app, route, body)
 
-Update a Route
+Update a Route, Fails if the route or app does not exist. Accepts partial updates / skips validation of zero values.
 
 Update a route
 
@@ -233,6 +234,58 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.appsAppRoutesRoutePatch(app, route, body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app** | **String**| name of the app. | 
+ **route** | **String**| route path. | 
+ **body** | [**RouteWrapper**](RouteWrapper.md)| One route to post. | 
+
+### Return type
+
+[**RouteWrapper**](RouteWrapper.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="appsAppRoutesRoutePut"></a>
+# **appsAppRoutesRoutePut**
+> RouteWrapper appsAppRoutesRoutePut(app, route, body)
+
+Create a Route if it does not exist. Update if it does. Will also create app if it does not exist. Put does not skip validation of zero values
+
+Update or Create a route
+
+### Example
+```javascript
+var FnJs = require('fn_js');
+
+var apiInstance = new FnJs.RoutesApi();
+
+var app = "app_example"; // String | name of the app.
+
+var route = "route_example"; // String | route path.
+
+var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.appsAppRoutesRoutePut(app, route, body, callback);
 ```
 
 ### Parameters

@@ -16,72 +16,64 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Log'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Log'));
   } else {
     // Browser globals (root is window)
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.App = factory(root.FnJs.ApiClient);
+    root.FnJs.LogWrapper = factory(root.FnJs.ApiClient, root.FnJs.Log);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Log) {
   'use strict';
 
 
 
 
   /**
-   * The App model module.
-   * @module model/App
+   * The LogWrapper model module.
+   * @module model/LogWrapper
    * @version 0.2.0
    */
 
   /**
-   * Constructs a new <code>App</code>.
-   * @alias module:model/App
+   * Constructs a new <code>LogWrapper</code>.
+   * @alias module:model/LogWrapper
    * @class
+   * @param log {module:model/Log} Call log entry.
    */
-  var exports = function() {
+  var exports = function(log) {
     var _this = this;
 
-
-
+    _this['log'] = log;
   };
 
   /**
-   * Constructs a <code>App</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>LogWrapper</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/App} obj Optional instance to populate.
-   * @return {module:model/App} The populated <code>App</code> instance.
+   * @param {module:model/LogWrapper} obj Optional instance to populate.
+   * @return {module:model/LogWrapper} The populated <code>LogWrapper</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('config')) {
-        obj['config'] = ApiClient.convertToType(data['config'], {'String': 'String'});
+      if (data.hasOwnProperty('log')) {
+        obj['log'] = Log.constructFromObject(data['log']);
       }
     }
     return obj;
   }
 
   /**
-   * Name of this app. Must be different than the image name. Can ony contain alphanumeric, -, and _.
-   * @member {String} name
+   * Call log entry.
+   * @member {module:model/Log} log
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * Application configuration
-   * @member {Object.<String, String>} config
-   */
-  exports.prototype['config'] = undefined;
+  exports.prototype['log'] = undefined;
 
 
 

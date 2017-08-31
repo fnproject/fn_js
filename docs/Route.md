@@ -9,10 +9,9 @@ Name | Type | Description | Notes
 **memory** | **Number** | Max usable memory for this route (MiB). | [optional] 
 **type** | **String** | Route type | [optional] 
 **format** | **String** | Payload format sent into function. | [optional] 
-**maxConcurrency** | **Number** | Maximum number of hot functions concurrency | [optional] 
 **config** | **{String: String}** | Route configuration - overrides application configuration | [optional] 
-**timeout** | **Number** | Timeout for executions of this route. Value in Seconds | [optional] 
-**idleTimeout** | **Number** | Hot functions idle timeout before termination. Value in Seconds | [optional] 
+**timeout** | **Number** | Timeout for executions of this route. Value in Seconds | [optional] [default to 30]
+**idleTimeout** | **Number** | Hot functions idle timeout before termination. Value in Seconds | [optional] [default to 30]
 
 
 <a name="TypeEnum"></a>

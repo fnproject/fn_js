@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.RoutesWrapper();
+    instance = new FnJs.Log();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('RoutesWrapper', function() {
-    it('should create an instance of RoutesWrapper', function() {
-      // uncomment below and update the code to test RoutesWrapper
-      //var instane = new FnJs.RoutesWrapper();
-      //expect(instance).to.be.a(FnJs.RoutesWrapper);
+  describe('Log', function() {
+    it('should create an instance of Log', function() {
+      // uncomment below and update the code to test Log
+      //var instane = new FnJs.Log();
+      //expect(instance).to.be.a(FnJs.Log);
     });
 
-    it('should have the property routes (base name: "routes")', function() {
-      // uncomment below and update the code to test the property routes
-      //var instane = new FnJs.RoutesWrapper();
+    it('should have the property callId (base name: "call_id")', function() {
+      // uncomment below and update the code to test the property callId
+      //var instane = new FnJs.Log();
       //expect(instance).to.be();
     });
 
-    it('should have the property error (base name: "error")', function() {
-      // uncomment below and update the code to test the property error
-      //var instane = new FnJs.RoutesWrapper();
+    it('should have the property log (base name: "log")', function() {
+      // uncomment below and update the code to test the property log
+      //var instane = new FnJs.Log();
       //expect(instance).to.be();
     });
 

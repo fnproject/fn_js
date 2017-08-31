@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.RoutesWrapper();
+    instance = new FnJs.LogApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,25 +49,27 @@
       object[property] = value;
   }
 
-  describe('RoutesWrapper', function() {
-    it('should create an instance of RoutesWrapper', function() {
-      // uncomment below and update the code to test RoutesWrapper
-      //var instane = new FnJs.RoutesWrapper();
-      //expect(instance).to.be.a(FnJs.RoutesWrapper);
+  describe('LogApi', function() {
+    describe('appsAppCallsCallLogDelete', function() {
+      it('should call appsAppCallsCallLogDelete successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsCallLogDelete
+        //instance.appsAppCallsCallLogDelete(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property routes (base name: "routes")', function() {
-      // uncomment below and update the code to test the property routes
-      //var instane = new FnJs.RoutesWrapper();
-      //expect(instance).to.be();
+    describe('appsAppCallsCallLogGet', function() {
+      it('should call appsAppCallsCallLogGet successfully', function(done) {
+        //uncomment below and update the code to test appsAppCallsCallLogGet
+        //instance.appsAppCallsCallLogGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property error (base name: "error")', function() {
-      // uncomment below and update the code to test the property error
-      //var instane = new FnJs.RoutesWrapper();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
