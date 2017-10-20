@@ -154,17 +154,22 @@ No authorization required
 
 <a name="appsGet"></a>
 # **appsGet**
-> AppsWrapper appsGet()
+> AppsWrapper appsGet(opts)
 
 Get all app names.
 
-Get a list of all the apps in the system.
+Get a list of all the apps in the system, returned in alphabetical order.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
 var apiInstance = new FnJs.AppsApi();
+
+var opts = { 
+  'cursor': "cursor_example", // String | Cursor from previous response.next_cursor to begin results after, if any.
+  'perPage': 56 // Number | Number of results to return, defaults to 30. Max of 100.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -173,11 +178,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.appsGet(callback);
+apiInstance.appsGet(opts, callback);
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cursor** | **String**| Cursor from previous response.next_cursor to begin results after, if any. | [optional] 
+ **perPage** | **Number**| Number of results to return, defaults to 30. Max of 100. | [optional] 
 
 ### Return type
 

@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 <a name="appsAppRoutesGet"></a>
 # **appsAppRoutesGet**
-> RoutesWrapper appsAppRoutesGet(app)
+> RoutesWrapper appsAppRoutesGet(app, opts)
 
 Get route list by app name.
 
-This will list routes for a particular app.
+This will list routes for a particular app, returned in alphabetical order.
 
 ### Example
 ```javascript
@@ -28,6 +28,11 @@ var apiInstance = new FnJs.RoutesApi();
 
 var app = "app_example"; // String | Name of app for this set of routes.
 
+var opts = { 
+  'image': "image_example", // String | Route image to match, exact.
+  'cursor': "cursor_example", // String | Cursor from previous response.next_cursor to begin results after, if any.
+  'perPage': 56 // Number | Number of results to return, defaults to 30. Max of 100.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -36,7 +41,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.appsAppRoutesGet(app, callback);
+apiInstance.appsAppRoutesGet(app, opts, callback);
 ```
 
 ### Parameters
@@ -44,6 +49,9 @@ apiInstance.appsAppRoutesGet(app, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app** | **String**| Name of app for this set of routes. | 
+ **image** | **String**| Route image to match, exact. | [optional] 
+ **cursor** | **String**| Cursor from previous response.next_cursor to begin results after, if any. | [optional] 
+ **perPage** | **Number**| Number of results to return, defaults to 30. Max of 100. | [optional] 
 
 ### Return type
 
