@@ -25,7 +25,7 @@
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.App = factory(root.FnJs.ApiClient);
+    root.FnJs.Trigger = factory(root.FnJs.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The App model module.
-   * @module model/App
+   * The Trigger model module.
+   * @module model/Trigger
    * @version 2.0.0
    */
 
   /**
-   * Constructs a new <code>App</code>.
-   * @alias module:model/App
+   * Constructs a new <code>Trigger</code>.
+   * @alias module:model/Trigger
    * @class
    */
   var exports = function() {
@@ -54,14 +54,16 @@
 
 
 
+
+
   };
 
   /**
-   * Constructs a <code>App</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Trigger</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/App} obj Optional instance to populate.
-   * @return {module:model/App} The populated <code>App</code> instance.
+   * @param {module:model/Trigger} obj Optional instance to populate.
+   * @return {module:model/Trigger} The populated <code>Trigger</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -73,14 +75,20 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('config')) {
-        obj['config'] = ApiClient.convertToType(data['config'], {'String': 'String'});
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+      }
+      if (data.hasOwnProperty('fn_id')) {
+        obj['fn_id'] = ApiClient.convertToType(data['fn_id'], 'String');
+      }
+      if (data.hasOwnProperty('app_id')) {
+        obj['app_id'] = ApiClient.convertToType(data['app_id'], 'String');
       }
       if (data.hasOwnProperty('annotations')) {
         obj['annotations'] = ApiClient.convertToType(data['annotations'], {'String': Object});
-      }
-      if (data.hasOwnProperty('syslog_url')) {
-        obj['syslog_url'] = ApiClient.convertToType(data['syslog_url'], 'String');
       }
       if (data.hasOwnProperty('created_at')) {
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -93,37 +101,47 @@
   }
 
   /**
-   * App ID
+   * Unique Trigger identifier.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Name of this app. Must be different than the image name. Can ony contain alphanumeric, -, and _.
+   * Unique name for this trigger, used to identify this trigger.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Application function configuration, applied to all Functions.
-   * @member {Object.<String, String>} config
+   * Class of trigger, e.g. schedule, http, queue
+   * @member {String} type
    */
-  exports.prototype['config'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * Application annotations - this is a map of annotations attached to this app, keys must not exceed 128 bytes and must consist of non-whitespace printable ascii characters, and the seralized representation of individual values must not exeed 512 bytes.
+   * URI path for this trigger. e.g. `sayHello`, `say/hello`
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
+  /**
+   * Opaque, unique Function identifier
+   * @member {String} fn_id
+   */
+  exports.prototype['fn_id'] = undefined;
+  /**
+   * Opaque, unique Application identifier
+   * @member {String} app_id
+   */
+  exports.prototype['app_id'] = undefined;
+  /**
+   * Trigger annotations - this is a map of annotations attached to this trigger, keys must not exceed 128 bytes and must consist of non-whitespace printable ascii characters, and the seralized representation of individual values must not exeed 512 bytes.
    * @member {Object.<String, Object>} annotations
    */
   exports.prototype['annotations'] = undefined;
   /**
-   * A comma separated list of syslog urls to send all function logs to. supports tls, udp or tcp. e.g. tls://logs.papertrailapp.com:1
-   * @member {String} syslog_url
-   */
-  exports.prototype['syslog_url'] = undefined;
-  /**
-   * Time when app was created. Always in UTC.
+   * Time when trigger was created. Always in UTC.
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
-   * Most recent time that app was updated. Always in UTC.
+   * Most recent time that trigger was updated. Always in UTC.
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

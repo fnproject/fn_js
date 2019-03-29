@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.Error();
+    instance = new FnJs.FnList();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('Error', function() {
-    it('should create an instance of Error', function() {
-      // uncomment below and update the code to test Error
-      //var instance = new FnJs.Error();
-      //expect(instance).to.be.a(FnJs.Error);
+  describe('FnList', function() {
+    it('should create an instance of FnList', function() {
+      // uncomment below and update the code to test FnList
+      //var instance = new FnJs.FnList();
+      //expect(instance).to.be.a(FnJs.FnList);
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instance = new FnJs.Error();
+    it('should have the property nextCursor (base name: "next_cursor")', function() {
+      // uncomment below and update the code to test the property nextCursor
+      //var instance = new FnJs.FnList();
       //expect(instance).to.be();
     });
 
-    it('should have the property fields (base name: "fields")', function() {
-      // uncomment below and update the code to test the property fields
-      //var instance = new FnJs.Error();
+    it('should have the property items (base name: "items")', function() {
+      // uncomment below and update the code to test the property items
+      //var instance = new FnJs.FnList();
       //expect(instance).to.be();
     });
 

@@ -1,31 +1,31 @@
-# FnJs.AppsApi
+# FnJs.FnsApi
 
 All URIs are relative to *https://127.0.0.1:8080/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApp**](AppsApi.md#createApp) | **POST** /apps | Create A New Application
-[**deleteApp**](AppsApi.md#deleteApp) | **DELETE** /apps/{appID} | Delete An Application
-[**getApp**](AppsApi.md#getApp) | **GET** /apps/{appID} | Get Information For An Application
-[**listApps**](AppsApi.md#listApps) | **GET** /apps | Get A List Of Applications
-[**updateApp**](AppsApi.md#updateApp) | **PUT** /apps/{appID} | Update an Application
+[**createFn**](FnsApi.md#createFn) | **POST** /fns | Create A New Function
+[**deleteFn**](FnsApi.md#deleteFn) | **DELETE** /fns/{fnID} | Delete A Function
+[**getFn**](FnsApi.md#getFn) | **GET** /fns/{fnID} | Get Definition Of A Function
+[**listFns**](FnsApi.md#listFns) | **GET** /fns | Get A list Of Functions Within An Application
+[**updateFn**](FnsApi.md#updateFn) | **PUT** /fns/{fnID} | Update A Function
 
 
-<a name="createApp"></a>
-# **createApp**
-> App createApp(body)
+<a name="createFn"></a>
+# **createFn**
+> Fn createFn(body)
 
-Create A New Application
+Create A New Function
 
-Creates a new Application, returning the complete entity.
+Creates a new Function, returning the complete entity.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
-var apiInstance = new FnJs.AppsApi();
+var apiInstance = new FnJs.FnsApi();
 
-var body = new FnJs.App(); // App | Application data to insert.
+var body = new FnJs.Fn(); // Fn | Function data to insert.
 
 
 var callback = function(error, data, response) {
@@ -35,18 +35,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createApp(body, callback);
+apiInstance.createFn(body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**App**](App.md)| Application data to insert. | 
+ **body** | [**Fn**](Fn.md)| Function data to insert. | 
 
 ### Return type
 
-[**App**](App.md)
+[**Fn**](Fn.md)
 
 ### Authorization
 
@@ -57,21 +57,21 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteApp"></a>
-# **deleteApp**
-> deleteApp(appID)
+<a name="deleteFn"></a>
+# **deleteFn**
+> deleteFn(fnID, )
 
-Delete An Application
+Delete A Function
 
-Delete the specified Application.
+Delete the specified Function.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
-var apiInstance = new FnJs.AppsApi();
+var apiInstance = new FnJs.FnsApi();
 
-var appID = "appID_example"; // String | Opaque, unique Application ID.
+var fnID = "fnID_example"; // String | Opaque, unique Function ID.
 
 
 var callback = function(error, data, response) {
@@ -81,14 +81,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteApp(appID, callback);
+apiInstance.deleteFn(fnID, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | **String**| Opaque, unique Application ID. | 
+ **fnID** | **String**| Opaque, unique Function ID. | 
 
 ### Return type
 
@@ -103,21 +103,21 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getApp"></a>
-# **getApp**
-> App getApp(appID)
+<a name="getFn"></a>
+# **getFn**
+> Fn getFn(fnID, )
 
-Get Information For An Application
+Get Definition Of A Function
 
-Returns more details about an Application, such as statistics.
+Gets the definition for the Function with the specified ID.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
-var apiInstance = new FnJs.AppsApi();
+var apiInstance = new FnJs.FnsApi();
 
-var appID = "appID_example"; // String | Opaque, unique Application ID.
+var fnID = "fnID_example"; // String | Opaque, unique Function ID.
 
 
 var callback = function(error, data, response) {
@@ -127,18 +127,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getApp(appID, callback);
+apiInstance.getFn(fnID, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | **String**| Opaque, unique Application ID. | 
+ **fnID** | **String**| Opaque, unique Function ID. | 
 
 ### Return type
 
-[**App**](App.md)
+[**Fn**](Fn.md)
 
 ### Authorization
 
@@ -149,24 +149,25 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="listApps"></a>
-# **listApps**
-> AppList listApps(opts)
+<a name="listFns"></a>
+# **listFns**
+> FnList listFns(opts)
 
-Get A List Of Applications
+Get A list Of Functions Within An Application
 
-Get a filtered list of Applications in alphabetical order.
+Get a filtered list of Functions for an Application, in alphabetical order.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
-var apiInstance = new FnJs.AppsApi();
+var apiInstance = new FnJs.FnsApi();
 
 var opts = { 
+  'appId': "appId_example", // String | Application ID.
   'cursor': "cursor_example", // String | Cursor from previous response.next_cursor to begin results after, if any.
   'perPage': 56, // Number | Number of results to return, defaults to 30. Max of 100.
-  'name': "name_example" // String | The Application name to filter by.
+  'name': "name_example" // String | Function name to filter by
 };
 
 var callback = function(error, data, response) {
@@ -176,20 +177,21 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listApps(opts, callback);
+apiInstance.listFns(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | **String**| Application ID. | [optional] 
  **cursor** | **String**| Cursor from previous response.next_cursor to begin results after, if any. | [optional] 
  **perPage** | **Number**| Number of results to return, defaults to 30. Max of 100. | [optional] 
- **name** | **String**| The Application name to filter by. | [optional] 
+ **name** | **String**| Function name to filter by | [optional] 
 
 ### Return type
 
-[**AppList**](AppList.md)
+[**FnList**](FnList.md)
 
 ### Authorization
 
@@ -200,23 +202,23 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateApp"></a>
-# **updateApp**
-> App updateApp(appIDbody)
+<a name="updateFn"></a>
+# **updateFn**
+> Fn updateFn(fnID, body)
 
-Update an Application
+Update A Function
 
-Updates an Application via merging the provided values.
+Updates a Function via merging the provided values.
 
 ### Example
 ```javascript
 var FnJs = require('fn_js');
 
-var apiInstance = new FnJs.AppsApi();
+var apiInstance = new FnJs.FnsApi();
 
-var appID = "appID_example"; // String | Opaque, unique Application ID.
+var fnID = "fnID_example"; // String | Opaque, unique Function ID.
 
-var body = new FnJs.App(); // App | Application data to merge with current values.
+var body = new FnJs.Fn(); // Fn | Function data to merge with current values.
 
 
 var callback = function(error, data, response) {
@@ -226,19 +228,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateApp(appIDbody, callback);
+apiInstance.updateFn(fnID, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | **String**| Opaque, unique Application ID. | 
- **body** | [**App**](App.md)| Application data to merge with current values. | 
+ **fnID** | **String**| Opaque, unique Function ID. | 
+ **body** | [**Fn**](Fn.md)| Function data to merge with current values. | 
 
 ### Return type
 
-[**App**](App.md)
+[**Fn**](Fn.md)
 
 ### Authorization
 
