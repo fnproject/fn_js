@@ -25,7 +25,7 @@
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.App = factory(root.FnJs.ApiClient);
+    root.FnJs.Fn = factory(root.FnJs.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The App model module.
-   * @module model/App
+   * The Fn model module.
+   * @module model/Fn
    * @version 2.0.0
    */
 
   /**
-   * Constructs a new <code>App</code>.
-   * @alias module:model/App
+   * Constructs a new <code>Fn</code>.
+   * @alias module:model/Fn
    * @class
    */
   var exports = function() {
@@ -54,14 +54,18 @@
 
 
 
+
+
+
+
   };
 
   /**
-   * Constructs a <code>App</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Fn</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/App} obj Optional instance to populate.
-   * @return {module:model/App} The populated <code>App</code> instance.
+   * @param {module:model/Fn} obj Optional instance to populate.
+   * @return {module:model/Fn} The populated <code>Fn</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -73,14 +77,26 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('app_id')) {
+        obj['app_id'] = ApiClient.convertToType(data['app_id'], 'String');
+      }
+      if (data.hasOwnProperty('image')) {
+        obj['image'] = ApiClient.convertToType(data['image'], 'String');
+      }
+      if (data.hasOwnProperty('memory')) {
+        obj['memory'] = ApiClient.convertToType(data['memory'], 'Number');
+      }
+      if (data.hasOwnProperty('timeout')) {
+        obj['timeout'] = ApiClient.convertToType(data['timeout'], 'Number');
+      }
+      if (data.hasOwnProperty('idle_timeout')) {
+        obj['idle_timeout'] = ApiClient.convertToType(data['idle_timeout'], 'Number');
+      }
       if (data.hasOwnProperty('config')) {
         obj['config'] = ApiClient.convertToType(data['config'], {'String': 'String'});
       }
       if (data.hasOwnProperty('annotations')) {
         obj['annotations'] = ApiClient.convertToType(data['annotations'], {'String': Object});
-      }
-      if (data.hasOwnProperty('syslog_url')) {
-        obj['syslog_url'] = ApiClient.convertToType(data['syslog_url'], 'String');
       }
       if (data.hasOwnProperty('created_at')) {
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -93,37 +109,59 @@
   }
 
   /**
-   * App ID
+   * Unique identifier
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Name of this app. Must be different than the image name. Can ony contain alphanumeric, -, and _.
+   * Unique name for this function.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Application function configuration, applied to all Functions.
+   * App ID.
+   * @member {String} app_id
+   */
+  exports.prototype['app_id'] = undefined;
+  /**
+   * Full container image name, e.g. hub.docker.com/fnproject/yo or fnproject/yo (default registry: hub.docker.com)
+   * @member {String} image
+   */
+  exports.prototype['image'] = undefined;
+  /**
+   * Maximum usable memory given to function (MiB).
+   * @member {Number} memory
+   */
+  exports.prototype['memory'] = undefined;
+  /**
+   * Timeout for executions of a function. Value in Seconds.
+   * @member {Number} timeout
+   * @default 30
+   */
+  exports.prototype['timeout'] = 30;
+  /**
+   * Hot functions idle timeout before container termination. Value in Seconds.
+   * @member {Number} idle_timeout
+   * @default 30
+   */
+  exports.prototype['idle_timeout'] = 30;
+  /**
+   * Function configuration key values.
    * @member {Object.<String, String>} config
    */
   exports.prototype['config'] = undefined;
   /**
-   * Application annotations - this is a map of annotations attached to this app, keys must not exceed 128 bytes and must consist of non-whitespace printable ascii characters, and the seralized representation of individual values must not exeed 512 bytes.
+   * Func annotations - this is a map of annotations attached to this func, keys must not exceed 128 bytes and must consist of non-whitespace printable ascii characters, and the seralized representation of individual values must not exeed 512 bytes.
    * @member {Object.<String, Object>} annotations
    */
   exports.prototype['annotations'] = undefined;
   /**
-   * A comma separated list of syslog urls to send all function logs to. supports tls, udp or tcp. e.g. tls://logs.papertrailapp.com:1
-   * @member {String} syslog_url
-   */
-  exports.prototype['syslog_url'] = undefined;
-  /**
-   * Time when app was created. Always in UTC.
+   * Time when function was created. Always in UTC RFC3339.
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
-   * Most recent time that app was updated. Always in UTC.
+   * Most recent time that function was updated. Always in UTC RFC3339.
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

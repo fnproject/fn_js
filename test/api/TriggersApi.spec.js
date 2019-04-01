@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.CallApi();
+    instance = new FnJs.TriggersApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,31 +49,51 @@
       object[property] = value;
   }
 
-  describe('CallApi', function() {
-    describe('fnsFnIDCallsCallIDGet', function() {
-      it('should call fnsFnIDCallsCallIDGet successfully', function(done) {
-        //uncomment below and update the code to test fnsFnIDCallsCallIDGet
-        //instance.fnsFnIDCallsCallIDGet(function(error) {
+  describe('TriggersApi', function() {
+    describe('createTrigger', function() {
+      it('should call createTrigger successfully', function(done) {
+        //uncomment below and update the code to test createTrigger
+        //instance.createTrigger(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fnsFnIDCallsGet', function() {
-      it('should call fnsFnIDCallsGet successfully', function(done) {
-        //uncomment below and update the code to test fnsFnIDCallsGet
-        //instance.fnsFnIDCallsGet(function(error) {
+    describe('deleteTrigger', function() {
+      it('should call deleteTrigger successfully', function(done) {
+        //uncomment below and update the code to test deleteTrigger
+        //instance.deleteTrigger(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getCallLogs', function() {
-      it('should call getCallLogs successfully', function(done) {
-        //uncomment below and update the code to test getCallLogs
-        //instance.getCallLogs(function(error) {
+    describe('getTrigger', function() {
+      it('should call getTrigger successfully', function(done) {
+        //uncomment below and update the code to test getTrigger
+        //instance.getTrigger(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listTriggers', function() {
+      it('should call listTriggers successfully', function(done) {
+        //uncomment below and update the code to test listTriggers
+        //instance.listTriggers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateTrigger', function() {
+      it('should call updateTrigger successfully', function(done) {
+        //uncomment below and update the code to test updateTrigger
+        //instance.updateTrigger(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,29 +16,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/App', 'model/AppList', 'model/Error'], factory);
+    define(['ApiClient', 'model/Error', 'model/Trigger', 'model/TriggerList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/App'), require('../model/AppList'), require('../model/Error'));
+    module.exports = factory(require('../ApiClient'), require('../model/Error'), require('../model/Trigger'), require('../model/TriggerList'));
   } else {
     // Browser globals (root is window)
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.AppsApi = factory(root.FnJs.ApiClient, root.FnJs.App, root.FnJs.AppList, root.FnJs.Error);
+    root.FnJs.TriggersApi = factory(root.FnJs.ApiClient, root.FnJs.Error, root.FnJs.Trigger, root.FnJs.TriggerList);
   }
-}(this, function(ApiClient, App, AppList, Error) {
+}(this, function(ApiClient, Error, Trigger, TriggerList) {
   'use strict';
 
   /**
-   * Apps service.
-   * @module api/AppsApi
+   * Triggers service.
+   * @module api/TriggersApi
    * @version 2.0.0
    */
 
   /**
-   * Constructs a new AppsApi. 
-   * @alias module:api/AppsApi
+   * Constructs a new TriggersApi. 
+   * @alias module:api/TriggersApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -48,26 +48,26 @@
 
 
     /**
-     * Callback function to receive the result of the createApp operation.
-     * @callback module:api/AppsApi~createAppCallback
+     * Callback function to receive the result of the createTrigger operation.
+     * @callback module:api/TriggersApi~createTriggerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/App} data The data returned by the service call.
+     * @param {module:model/Trigger} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Create A New Application
-     * Creates a new Application, returning the complete entity.
-     * @param {module:model/App} body Application data to insert.
-     * @param {module:api/AppsApi~createAppCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/App}
+     * Create A New Trigger.
+     * Creates a new Trigger, returning the complete entity.
+     * @param {module:model/Trigger} body Trigger data to insert.
+     * @param {module:api/TriggersApi~createTriggerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Trigger}
      */
-    this.createApp = function(body, callback) {
+    this.createTrigger = function(body, callback) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createApp");
+        throw new Error("Missing the required parameter 'body' when calling createTrigger");
       }
 
 
@@ -85,40 +85,40 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = App;
+      var returnType = Trigger;
 
       return this.apiClient.callApi(
-        '/apps', 'POST',
+        '/triggers', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteApp operation.
-     * @callback module:api/AppsApi~deleteAppCallback
+     * Callback function to receive the result of the deleteTrigger operation.
+     * @callback module:api/TriggersApi~deleteTriggerCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Delete An Application
-     * Delete the specified Application.
-     * @param {String} appID Opaque, unique Application ID.
-     * @param {module:api/AppsApi~deleteAppCallback} callback The callback function, accepting three arguments: error, data, response
+     * Delete A Trigger
+     * Delete the specified Trigger.
+     * @param {String} triggerID Opaque, unique Trigger ID.
+     * @param {module:api/TriggersApi~deleteTriggerCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteApp = function(appID, callback) {
+    this.deleteTrigger = function(triggerID, callback) {
       var postBody = null;
 
-      // verify the required parameter 'appID' is set
-      if (appID === undefined || appID === null) {
-        throw new Error("Missing the required parameter 'appID' when calling deleteApp");
+      // verify the required parameter 'triggerID' is set
+      if (triggerID === undefined || triggerID === null) {
+        throw new Error("Missing the required parameter 'triggerID' when calling deleteTrigger");
       }
 
 
       var pathParams = {
-        'appID': appID
+        'triggerID': triggerID
       };
       var queryParams = {
       };
@@ -135,38 +135,38 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/apps/{appID}', 'DELETE',
+        '/triggers/{triggerID}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getApp operation.
-     * @callback module:api/AppsApi~getAppCallback
+     * Callback function to receive the result of the getTrigger operation.
+     * @callback module:api/TriggersApi~getTriggerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/App} data The data returned by the service call.
+     * @param {module:model/Trigger} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get Information For An Application
-     * Returns more details about an Application, such as statistics.
-     * @param {String} appID Opaque, unique Application ID.
-     * @param {module:api/AppsApi~getAppCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/App}
+     * Get Definition Of A Trigger
+     * Gets the definition for the Trigger with the specified ID.
+     * @param {String} triggerID Opaque, unique Trigger ID.
+     * @param {module:api/TriggersApi~getTriggerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Trigger}
      */
-    this.getApp = function(appID, callback) {
+    this.getTrigger = function(triggerID, callback) {
       var postBody = null;
 
-      // verify the required parameter 'appID' is set
-      if (appID === undefined || appID === null) {
-        throw new Error("Missing the required parameter 'appID' when calling getApp");
+      // verify the required parameter 'triggerID' is set
+      if (triggerID === undefined || triggerID === null) {
+        throw new Error("Missing the required parameter 'triggerID' when calling getTrigger");
       }
 
 
       var pathParams = {
-        'appID': appID
+        'triggerID': triggerID
       };
       var queryParams = {
       };
@@ -180,34 +180,36 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = App;
+      var returnType = Trigger;
 
       return this.apiClient.callApi(
-        '/apps/{appID}', 'GET',
+        '/triggers/{triggerID}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the listApps operation.
-     * @callback module:api/AppsApi~listAppsCallback
+     * Callback function to receive the result of the listTriggers operation.
+     * @callback module:api/TriggersApi~listTriggersCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/AppList} data The data returned by the service call.
+     * @param {module:model/TriggerList} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get A List Of Applications
-     * Get a filtered list of Applications in alphabetical order.
+     * Get A List Of Triggers Within An Application Or Function
+     * This will list all Triggers for a particular Application or Function, returned in name alphabetical order.
      * @param {Object} opts Optional parameters
+     * @param {String} opts.appId Application ID.
+     * @param {String} opts.fnId Function ID.
      * @param {String} opts.cursor Cursor from previous response.next_cursor to begin results after, if any.
      * @param {Number} opts.perPage Number of results to return, defaults to 30. Max of 100.
-     * @param {String} opts.name The Application name to filter by.
-     * @param {module:api/AppsApi~listAppsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AppList}
+     * @param {String} opts.name A Trigger name to filter by.
+     * @param {module:api/TriggersApi~listTriggersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TriggerList}
      */
-    this.listApps = function(opts, callback) {
+    this.listTriggers = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
 
@@ -215,6 +217,8 @@
       var pathParams = {
       };
       var queryParams = {
+        'app_id': opts['appId'],
+        'fn_id': opts['fnId'],
         'cursor': opts['cursor'],
         'per_page': opts['perPage'],
         'name': opts['name'],
@@ -229,47 +233,47 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = AppList;
+      var returnType = TriggerList;
 
       return this.apiClient.callApi(
-        '/apps', 'GET',
+        '/triggers', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the updateApp operation.
-     * @callback module:api/AppsApi~updateAppCallback
+     * Callback function to receive the result of the updateTrigger operation.
+     * @callback module:api/TriggersApi~updateTriggerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/App} data The data returned by the service call.
+     * @param {module:model/Trigger} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Update an Application
-     * Updates an Application via merging the provided values.
-     * @param {String} appID Opaque, unique Application ID.
-     * @param {module:model/App} body Application data to merge with current values.
-     * @param {module:api/AppsApi~updateAppCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/App}
+     * Update A Trigger
+     * Updates a Trigger by merging the provided values.
+     * @param {String} triggerID Opaque, unique Trigger ID.
+     * @param {module:model/Trigger} body Trigger data to merge into current value.
+     * @param {module:api/TriggersApi~updateTriggerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Trigger}
      */
-    this.updateApp = function(appID, body, callback) {
+    this.updateTrigger = function(triggerID, body, callback) {
       var postBody = body;
 
-      // verify the required parameter 'appID' is set
-      if (appID === undefined || appID === null) {
-        throw new Error("Missing the required parameter 'appID' when calling updateApp");
+      // verify the required parameter 'triggerID' is set
+      if (triggerID === undefined || triggerID === null) {
+        throw new Error("Missing the required parameter 'triggerID' when calling updateTrigger");
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateApp");
+        throw new Error("Missing the required parameter 'body' when calling updateTrigger");
       }
 
 
       var pathParams = {
-        'appID': appID
+        'triggerID': triggerID
       };
       var queryParams = {
       };
@@ -283,10 +287,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = App;
+      var returnType = Trigger;
 
       return this.apiClient.callApi(
-        '/apps/{appID}', 'PUT',
+        '/triggers/{triggerID}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

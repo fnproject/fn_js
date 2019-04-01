@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.Error();
+    instance = new FnJs.Stat();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('Error', function() {
-    it('should create an instance of Error', function() {
-      // uncomment below and update the code to test Error
-      //var instance = new FnJs.Error();
-      //expect(instance).to.be.a(FnJs.Error);
+  describe('Stat', function() {
+    it('should create an instance of Stat', function() {
+      // uncomment below and update the code to test Stat
+      //var instance = new FnJs.Stat();
+      //expect(instance).to.be.a(FnJs.Stat);
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instance = new FnJs.Error();
+    it('should have the property timestamp (base name: "timestamp")', function() {
+      // uncomment below and update the code to test the property timestamp
+      //var instance = new FnJs.Stat();
       //expect(instance).to.be();
     });
 
-    it('should have the property fields (base name: "fields")', function() {
-      // uncomment below and update the code to test the property fields
-      //var instance = new FnJs.Error();
+    it('should have the property metrics (base name: "metrics")', function() {
+      // uncomment below and update the code to test the property metrics
+      //var instance = new FnJs.Stat();
       //expect(instance).to.be();
     });
 

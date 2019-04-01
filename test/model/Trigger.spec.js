@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.App();
+    instance = new FnJs.Trigger();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,52 +49,64 @@
       object[property] = value;
   }
 
-  describe('App', function() {
-    it('should create an instance of App', function() {
-      // uncomment below and update the code to test App
-      //var instance = new FnJs.App();
-      //expect(instance).to.be.a(FnJs.App);
+  describe('Trigger', function() {
+    it('should create an instance of Trigger', function() {
+      // uncomment below and update the code to test Trigger
+      //var instance = new FnJs.Trigger();
+      //expect(instance).to.be.a(FnJs.Trigger);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new FnJs.App();
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new FnJs.App();
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 
-    it('should have the property config (base name: "config")', function() {
-      // uncomment below and update the code to test the property config
-      //var instance = new FnJs.App();
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instance = new FnJs.Trigger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property source (base name: "source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instance = new FnJs.Trigger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fnId (base name: "fn_id")', function() {
+      // uncomment below and update the code to test the property fnId
+      //var instance = new FnJs.Trigger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property appId (base name: "app_id")', function() {
+      // uncomment below and update the code to test the property appId
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 
     it('should have the property annotations (base name: "annotations")', function() {
       // uncomment below and update the code to test the property annotations
-      //var instance = new FnJs.App();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property syslogUrl (base name: "syslog_url")', function() {
-      // uncomment below and update the code to test the property syslogUrl
-      //var instance = new FnJs.App();
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instance = new FnJs.App();
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instance = new FnJs.App();
+      //var instance = new FnJs.Trigger();
       //expect(instance).to.be();
     });
 

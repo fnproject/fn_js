@@ -1,6 +1,6 @@
 {
   "name": "fn_js",
-  "version": "0.2.1",
+  "version": "2.0.0",
   "description": "The_open_source_serverless_platform_",
   "license": "Unlicense",
   "main": "src/index.js",
@@ -11,7 +11,7 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "3.5.2"
+    "superagent": "3.7.0"
   },
   "devDependencies": {
     "mocha": "~2.3.4",

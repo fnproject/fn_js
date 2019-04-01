@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new FnJs.CallApi();
+    instance = new FnJs.FnsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,31 +49,51 @@
       object[property] = value;
   }
 
-  describe('CallApi', function() {
-    describe('fnsFnIDCallsCallIDGet', function() {
-      it('should call fnsFnIDCallsCallIDGet successfully', function(done) {
-        //uncomment below and update the code to test fnsFnIDCallsCallIDGet
-        //instance.fnsFnIDCallsCallIDGet(function(error) {
+  describe('FnsApi', function() {
+    describe('createFn', function() {
+      it('should call createFn successfully', function(done) {
+        //uncomment below and update the code to test createFn
+        //instance.createFn(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fnsFnIDCallsGet', function() {
-      it('should call fnsFnIDCallsGet successfully', function(done) {
-        //uncomment below and update the code to test fnsFnIDCallsGet
-        //instance.fnsFnIDCallsGet(function(error) {
+    describe('deleteFn', function() {
+      it('should call deleteFn successfully', function(done) {
+        //uncomment below and update the code to test deleteFn
+        //instance.deleteFn(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getCallLogs', function() {
-      it('should call getCallLogs successfully', function(done) {
-        //uncomment below and update the code to test getCallLogs
-        //instance.getCallLogs(function(error) {
+    describe('getFn', function() {
+      it('should call getFn successfully', function(done) {
+        //uncomment below and update the code to test getFn
+        //instance.getFn(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listFns', function() {
+      it('should call listFns successfully', function(done) {
+        //uncomment below and update the code to test listFns
+        //instance.listFns(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateFn', function() {
+      it('should call updateFn successfully', function(done) {
+        //uncomment below and update the code to test updateFn
+        //instance.updateFn(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
